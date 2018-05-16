@@ -1,0 +1,17 @@
+{
+  "name": "front-end",
+  "version": "1.0.0",
+  "description": "",
+  "main": "challenge.js",
+  "scripts": {
+    "start": "npm-sass ./scss/index.scss > ./public/index.css && node challenge.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Filippo Oretti",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "npm-sass": "^2.2.3"
+  }
+}
