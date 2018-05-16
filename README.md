@@ -3,11 +3,12 @@ UI/UX Simple Auth Webpage
 
 A Simple Auth page for REST authentication (including headers)
 
-Use this command
+### Installation
+
  *npm i & npm start*
 
-Go to
+### Visualisation
 
-*http://localhost:3000*
+<a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
-Done
+### Done
