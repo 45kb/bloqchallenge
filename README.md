@@ -5,7 +5,7 @@ A Simple UX/UI Auth page in my style for REST authentication (including headers)
 
 ### Installation
 
- *npm i & npm start*
+ > npm i & npm start
 
 ### Visualisation
 
