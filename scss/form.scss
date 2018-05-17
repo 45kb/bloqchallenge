@@ -1,10 +1,11 @@
 .form {
-  margin-top: 10%;
+  margin-top: 6%;
 
   form {
     max-width: 280px;
-    padding: 8%;
+    padding: 4% 8%;
     background: $color-form;
+    border-radius: 10px;
 
     span {
       cursor: pointer;
