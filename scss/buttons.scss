@@ -2,7 +2,7 @@ button {
   background-color: $color-button;
   color: $color-button-text;
   padding: 10px 0;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 1px $color-button-shadow;
 
   &:hover, &:active {
@@ -10,9 +10,12 @@ button {
     text-shadow: 0 -1px $color-button-shadow;
   }
 
-  &:active {
+  &:active, &:focus {
     box-shadow: none;
     background: royalblue;
     color: white;
+    &:after {
+      content: '...';
+    }
   }
 }

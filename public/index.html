@@ -6,17 +6,18 @@
     <title>Bloq User</title>
     <link rel="stylesheet" href="public/helper.css">
     <link rel="stylesheet" href="public/index.css">
-    <script type="text/javascript" src="public/form.js"></script>
   </head>
   <body>
-    <form id="auth-form">
+    <div class="form">
+      <div class="separator30"></div>
+    <form>
       <!-- toggle form-->
       <div class="center-content">
-        <span onClick="openLoginForm" class="active">
+        <span id="login-option" onClick="openLoginForm()" class="active">
           <i class="fa fa-user"></i>
-          Login
+          Log in
         </span>
-        <span onClick="openSigninForm">
+        <span id="signin-option" onClick="openSigninForm()">
           <i class="fa fa-pencil"></i>
           Sign in
         </span>
@@ -29,7 +30,7 @@
       <input class="even" type="text" name="lastname" value="" placeholder="Lastname">
       </div>
       <!--input login-->
-      <div class="login">
+      <div id="login" class="login">
         <div class="separator15"></div>
         <input class="odd" type="text" name="email" value="" placeholder="Email address">
         <input class="even" type="text" name="password" value="" placeholder="Password">
@@ -43,5 +44,7 @@
         <div class="separator15"></div>
       </div>
     </form>
+  </div>
+    <script type="text/javascript" src="public/form.js"></script>
   </body>
 </html>

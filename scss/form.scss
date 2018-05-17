@@ -1,40 +1,39 @@
-form {
-  max-width: 300px;
+.form {
   margin-top: 10%;
-  padding: 8%;
-  background: $color-form;
 
-  span {
-    cursor: pointer;
-    background: $color-body;
-    color: rgba(255,255,255, .85);
-    box-shadow: 0 1px 0 rgba(0,0,0, .2);
-    padding: 5px 4%;
+  form {
+    max-width: 280px;
+    padding: 8%;
+    background: $color-form;
 
-    &:hover:not(.active) {
-      transition: .15s color linear;
-      color: white;
-    }
+    span {
+      cursor: pointer;
+      background: $color-body;
+      color: rgba(255,255,255, .85);
+      box-shadow: 0 1px 0 rgba(0,0,0, .2);
+      padding: 5px 10px;
 
-    &:active:not(.active){
-      background: rgba(0,0,0,.6);
-    }
-
-    &.active {
-      background: rgba(0,0,0,.6);
-      color: white;
-
-      i {
-        color: $color-button;
+      &:hover:not(.active) {
+        transition: .15s color linear;
+        color: white;
       }
-    }
 
-    &:nth-child(odd) {
-      border-radius: 5px  0 0 5px;
-    }
+      &.active {
+        background: rgba(0,0,0,.6);
+        color: white;
 
-    &:nth-child(even) {
-      border-radius: 0 5px 5px 0;
+        i {
+          color: $color-button;
+        }
+      }
+
+      &:nth-child(odd) {
+        border-radius: 5px  0 0 5px;
+      }
+
+      &:nth-child(even) {
+        border-radius: 0 5px 5px 0;
+      }
     }
   }
 }
