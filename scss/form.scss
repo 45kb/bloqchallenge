@@ -1,13 +1,14 @@
 form {
   max-width: 300px;
   margin-top: 10%;
-  padding: 5%;
+  padding: 8%;
   background: $color-form;
 
   span {
     cursor: pointer;
     background: $color-body;
     color: rgba(255,255,255, .85);
+    box-shadow: 0 1px 0 rgba(0,0,0, .2);
     padding: 5px 4%;
 
     &:hover:not(.active) {
@@ -16,11 +17,11 @@ form {
     }
 
     &:active:not(.active){
-      background: rgba(0,0,0,.8);
+      background: rgba(0,0,0,.6);
     }
 
     &.active {
-      background: rgba(0,0,0,.8);
+      background: rgba(0,0,0,.6);
       color: white;
 
       i {

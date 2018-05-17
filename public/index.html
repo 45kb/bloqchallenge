@@ -6,24 +6,24 @@
     <title>Bloq User</title>
     <link rel="stylesheet" href="public/helper.css">
     <link rel="stylesheet" href="public/index.css">
-    <script type="text/javascript" src="public/index.js"></script>
+    <script type="text/javascript" src="public/form.js"></script>
   </head>
   <body>
-    <form>
+    <form id="auth-form">
       <!-- toggle form-->
       <div class="center-content">
-        <span class="active">
+        <span onClick="openLoginForm" class="active">
           <i class="fa fa-user"></i>
           Login
         </span>
-          <span>
-            <i class="fa fa-pencil"></i>
-            Sign in
-          </span>
+        <span onClick="openSigninForm">
+          <i class="fa fa-pencil"></i>
+          Sign in
+        </span>
       </div>
       <div class="separator15"></div>
       <!--input signup-->
-      <div class="signup hide">
+      <div id="signin" class="hide">
       <div class="separator15"></div>
       <input class="odd" type="text" name="firstname" value="" placeholder="Firstname">
       <input class="even" type="text" name="lastname" value="" placeholder="Lastname">
@@ -37,9 +37,9 @@
       <!--button toggle-->
       <div class="separator15"></div>
       <div class="center-content">
-        <button class="line" type="button" name="button">Login</button>
+        <button id="login-button" class="line" type="button" name="button">Login</button>
         <div class="separator15"></div>
-        <button class="line hide" type="button" name="button">Sign in</button>
+        <button id="signin-button" class="line hide" type="button" name="button">Sign in</button>
         <div class="separator15"></div>
       </div>
     </form>
