@@ -1,0 +1,39 @@
+form {
+  max-width: 300px;
+  margin-top: 10%;
+  padding: 5%;
+  background: $color-form;
+
+  span {
+    cursor: pointer;
+    background: $color-body;
+    color: rgba(255,255,255, .85);
+    padding: 5px 4%;
+
+    &:hover:not(.active) {
+      transition: .15s color linear;
+      color: white;
+    }
+
+    &:active:not(.active){
+      background: rgba(0,0,0,.8);
+    }
+
+    &.active {
+      background: rgba(0,0,0,.8);
+      color: white;
+
+      i {
+        color: $color-button;
+      }
+    }
+
+    &:nth-child(odd) {
+      border-radius: 5px  0 0 5px;
+    }
+
+    &:nth-child(even) {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+}

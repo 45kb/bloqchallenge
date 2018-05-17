@@ -4,21 +4,44 @@
   <head>
     <meta charset="utf-8">
     <title>Bloq User</title>
+    <link rel="stylesheet" href="public/helper.css">
     <link rel="stylesheet" href="public/index.css">
+    <script type="text/javascript" src="public/index.js"></script>
   </head>
   <body>
     <form>
       <!-- toggle form-->
-      <a>Login</a> / <a>Signup</a>
-      <!--input login-->
-      <input type="text" name="email" value="" placeholder="Email address">
-      <input type="text" name="password" value="" placeholder="Password">
+      <div class="center-content">
+        <span class="active">
+          <i class="fa fa-user"></i>
+          Login
+        </span>
+          <span>
+            <i class="fa fa-pencil"></i>
+            Sign in
+          </span>
+      </div>
+      <div class="separator15"></div>
       <!--input signup-->
-      <input type="text" name="firstname" value="" placeholder="Firstname">
-      <input type="text" name="lastname" value="" placeholder="Lastname">
+      <div class="signup hide">
+      <div class="separator15"></div>
+      <input class="odd" type="text" name="firstname" value="" placeholder="Firstname">
+      <input class="even" type="text" name="lastname" value="" placeholder="Lastname">
+      </div>
+      <!--input login-->
+      <div class="login">
+        <div class="separator15"></div>
+        <input class="odd" type="text" name="email" value="" placeholder="Email address">
+        <input class="even" type="text" name="password" value="" placeholder="Password">
+      </div>
       <!--button toggle-->
-      <button type="button" name="button">Login</button>
-      <button type="button" name="button">Signup</button>
+      <div class="separator15"></div>
+      <div class="center-content">
+        <button class="line" type="button" name="button">Login</button>
+        <div class="separator15"></div>
+        <button class="line hide" type="button" name="button">Sign in</button>
+        <div class="separator15"></div>
+      </div>
     </form>
   </body>
 </html>

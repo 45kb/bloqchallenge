@@ -1,0 +1,15 @@
+input {
+  padding: 0 3%;
+
+  &:focus {
+    background: rgba(255,255,255, .95);
+    transition: .3s background linear;
+  }
+  &.odd {
+    border-radius: 5px 5px 0 0;
+  }
+
+  &.even {
+      border-radius: 0 0 5px 5px;
+  }
+}
