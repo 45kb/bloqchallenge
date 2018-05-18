@@ -4,6 +4,7 @@
     , launchLogin = new Event('launchLogin')
     , loginSuccess = new Event('loginSuccess')
     , signinSuccess = new Event('signinSuccess')
+    , body = document.body
     , authImg = document.getElementById('auth-img')
     , formBody = document.getElementById('form-body')
     , loginSuccessElement = document.getElementById('login-success')
@@ -41,6 +42,12 @@
     , showLoaderSignin = function () {
       window.dispatchEvent(showLoaderSignin)
     }
+    , disableCursor = function () {
+      body.style = 'pointer-events:none'
+    }
+    , enableCursor = function () {
+      body.style = 'pointer-events:all'
+    }
 
   window.addEventListener('openLogin', function (e) {
     signinError.classList.add('hide')
@@ -57,11 +64,15 @@
 
   //listen for login success
   window.addEventListener('loginSuccess', function (e) {
+    enableCursor()
+    window.confirm("At this point the form error will stop the user, now we continue to success event. Ok?")
     authImg.classList.add('success')
     formBody.innerText = "Login succeded!"
   })
 
   window.addEventListener('signinSuccess', function (e) {
+    enableCursor()
+    window.confirm("At this point the form error will stop the user, now we continue to success event. Ok?")
     authImg.classList.add('success')
     formBody.innerText = "Sign in succeded!"
   })
@@ -81,6 +92,7 @@
   }, false)
 
   window.addEventListener('launchSignin', function (e) {
+    disableCursor()
     signinError.classList.remove('hide')
     signinErrorElement.innerText = "Error in a field!"
     window.setTimeout(function () {
@@ -89,6 +101,7 @@
   }, false)
 
   window.addEventListener('launchLogin', function (e) {
+    disableCursor()
     loginError.classList.remove('hide')
     loginErrorElement.innerText = "Error in a field!"
     window.setTimeout(function () {
