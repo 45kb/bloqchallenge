@@ -2358,6 +2358,7 @@ button {
 .form {
   margin-top: 10%;
   margin-top: 10vh;
+  width: 90%;
   max-width: 600px; }
   .form .error {
     color: white;

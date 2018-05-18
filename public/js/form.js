@@ -65,14 +65,14 @@
   //listen for login success
   window.addEventListener('loginSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form error will stop the user, now we continue to success event. Ok?")
+    window.confirm("At this point the form error will stop the user, now we continue to the success event. Ok?")
     authImg.classList.add('success')
     formBody.innerText = "Login succeded!"
   })
 
   window.addEventListener('signinSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form error will stop the user, now we continue to success event. Ok?")
+    window.confirm("At this point the form error will stop the user, now we continue to the success event. Ok?")
     authImg.classList.add('success')
     formBody.innerText = "Sign in succeded!"
   })
@@ -97,7 +97,7 @@
     signinErrorElement.innerText = "Error in a field!"
     window.setTimeout(function () {
       launchSigninSuccess()
-    }, 2500)
+    }, 1000)
   }, false)
 
   window.addEventListener('launchLogin', function (e) {
@@ -106,5 +106,5 @@
     loginErrorElement.innerText = "Error in a field!"
     window.setTimeout(function () {
       launchLoginSuccess()
-    }, 2500)
+    }, 1000)
   }, false)
