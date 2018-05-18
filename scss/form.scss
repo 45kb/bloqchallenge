@@ -4,9 +4,9 @@
   max-width: 600px;
 
   .error {
-    background: white;
-    color: red;
+    color: rgba(0,0,0, .6);
     line-height: 16px;
+    font-size: 16px;
 
     div {
       font-size: 12px;
@@ -14,7 +14,6 @@
     }
 
     i {
-      background: white;
       float:left;
       color: red;
       padding: 0 4px;
@@ -51,11 +50,11 @@
       }
 
       &.active {
-        background: rgba(0,0,0,.6);
+        background: rgba(0,0,0,.22);
         color: white;
 
         i {
-          color: cyan;
+          color: white;
         }
       }
 

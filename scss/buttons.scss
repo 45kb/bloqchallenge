@@ -1,5 +1,5 @@
 button {
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,.22);
   color: $color-button-text;
   padding: 10px 0;
   border-radius: 2px;
@@ -14,7 +14,6 @@ button {
     box-shadow: none;
     &:after {
       content: ' ...';
-      color: cyan;
     }
   }
 }
