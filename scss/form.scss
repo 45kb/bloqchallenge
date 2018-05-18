@@ -1,19 +1,24 @@
 .form {
   margin-top: 15%;
+  margin-top: 20vh;
+  max-width: 600px;
+
   .error {
-    background: rgba(0,0,0,.6);
-    color:white;
+    background: white;
+    color: red;
     line-height: 16px;
 
     div {
       font-size: 12px;
+      line-height: 28px;
     }
 
     i {
-      background: red;
+      background: white;
       float:left;
-      color: white;
-      padding: 2px;
+      color: red;
+      padding: 0 4px;
+      line-height: 27px;
 
       &:nth-child(odd) {
         float:right;
