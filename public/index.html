@@ -26,20 +26,32 @@
       <div id="signin" class="hide">
       <div class="separator15"></div>
       <input class="odd" type="text" name="firstname" value="" placeholder="Firstname">
+      <div class="line error hide" id="signin-error">
+        <i class="fa fa-arrow-up"></i>
+        <i class="fa fa-arrow-down"></i>
+        <!--here goes error message-->
+        <div></div>
+      </div>
       <input class="even" type="text" name="lastname" value="" placeholder="Lastname">
       </div>
       <!--input login-->
       <div id="login" class="login">
         <div class="separator15"></div>
         <input class="odd" type="text" name="email" value="" placeholder="Email address">
+        <div class="line error hide" id="login-error">
+          <i class="fa fa-arrow-up"></i>
+          <i class="fa fa-arrow-down"></i>
+          <!--here goes error message-->
+          <div></div>
+        </div>
         <input class="even" type="text" name="password" value="" placeholder="Password">
       </div>
       <!--button toggle-->
       <div class="separator15"></div>
       <div class="center-content">
-        <button id="login-button" class="line" type="button" name="button">Login</button>
+        <button id="login-button" class="line" type="button" onClick="launchTheLogin()" name="button">Login</button>
         <div class="separator15"></div>
-        <button id="signin-button" class="line hide" type="button" name="button">Sign in</button>
+        <button id="signin-button" class="line hide" type="button" onClick="launchTheSignin()" name="button">Sign in</button>
         <div class="separator15"></div>
       </div>
     </form>

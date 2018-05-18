@@ -1,5 +1,5 @@
 button {
-  background-color: $color-button;
+  background-color: rgba(0,0,0,.6);
   color: $color-button-text;
   padding: 10px 0;
   border-radius: 2px;
@@ -12,10 +12,9 @@ button {
 
   &:active, &:focus {
     box-shadow: none;
-    background: royalblue;
-    color: white;
     &:after {
-      content: '...';
+      content: ' ...';
+      color: cyan;
     }
   }
 }

@@ -1,22 +1,48 @@
 .form {
-  margin-top: 6%;
+  margin-top: 15%;
+  .error {
+    background: rgba(0,0,0,.6);
+    color:white;
+    line-height: 16px;
 
+    div {
+      font-size: 12px;
+    }
+
+    i {
+      background: red;
+      float:left;
+      color: white;
+      padding: 2px;
+
+      &:nth-child(odd) {
+        float:right;
+      }
+    }
+  }
   form {
-    max-width: 280px;
-    padding: 4% 8%;
-    background: $color-form;
+    max-width: 300px;
+    padding: 40px 7%;
     border-radius: 10px;
+    background: linear-gradient(226deg, #00d5e7, #42acb4, #00ffd0, #007aff);
+    background-size: 800% 800%;
+    -webkit-animation: bg 37s ease infinite;
+    -moz-animation: bg 37s ease infinite;
+    animation: bg 37s ease infinite;
 
     span {
       cursor: pointer;
-      background: $color-body;
-      color: rgba(255,255,255, .85);
-      box-shadow: 0 1px 0 rgba(0,0,0, .2);
+      background: white;
+      color: black;
       padding: 5px 10px;
+
+      i {
+        color: rgba(0,0,0, .25);
+      }
 
       &:hover:not(.active) {
         transition: .15s color linear;
-        color: white;
+        color: rgba(0,0,0, .6);
       }
 
       &.active {
@@ -24,7 +50,7 @@
         color: white;
 
         i {
-          color: $color-button;
+          color: cyan;
         }
       }
 
