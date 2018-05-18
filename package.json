@@ -4,13 +4,14 @@
   "description": "",
   "main": "challenge.js",
   "scripts": {
-    "start": "npm-sass ./scss/index.scss > ./public/index.css && node challenge.js",
+    "start": "cp ./node_modules/csshelper/dist/helper.min.css ./public/css/ && npm-sass ./scss/index.scss > ./public/css/index.css && node challenge.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Filippo Oretti",
   "license": "ISC",
   "dependencies": {
+    "csshelper": "^1.0.1",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
     "npm-sass": "^2.2.3"

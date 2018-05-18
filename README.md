@@ -1,7 +1,7 @@
 
-## Styled Auth Webpage
+## Simple Auth UI Component
 
-A Simple UX/UI Auth page in my style for REST authentication (including headers)
+A Simple UX/UI Auth Component
 
 ### Installation
 

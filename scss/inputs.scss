@@ -24,10 +24,9 @@ input {
   }
   &.odd {
     border-radius: 5px 5px 0 0;
-    border-bottom: 1px solid rgba(0,0,0, .1);
   }
 
   &.even {
-      border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
   }
 }

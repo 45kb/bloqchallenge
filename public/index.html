@@ -3,15 +3,17 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Bloq User</title>
-    <link rel="stylesheet" href="public/helper.css">
-    <link rel="stylesheet" href="public/index.css">
+    <title>Auth UI Component</title>
+	  <meta name="google" content="notranslate" />
+	  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="public/css/helper.min.css">
+    <link rel="stylesheet" href="public/css/index.css">
   </head>
   <body>
     <div class="form center-content">
     <form>
-
-        <img src="/public/anonym.png" width="50" alt="">
+      <img id="auth-img" src="/public/img/anonym.png" width="50" alt="">
+      <div id="form-body">
       <!-- toggle form-->
       <div class="line center-content">
         <div class="col5">
@@ -45,7 +47,7 @@
         <div class="line error hide" id="login-error">
           <i class="fa fa-caret-up"></i>
           <i class="fa fa-caret-down"></i>
-          <!--here goes error message-->
+          <!--here goes error message (do not remove)-->
           <div></div>
         </div>
         <input class="even" type="text" name="password" value="" placeholder="Password">
@@ -58,8 +60,17 @@
         <button id="signin-button" class="line hide" type="button" onClick="launchTheSignin()" name="button">Sign in</button>
         <div class="separator15"></div>
       </div>
+      </div>
+      <!--login success-->
+      <div id="login-success" class="line hide">
+        Login succeded!
+      </div>
+      <!--signin success-->
+      <div id="signin-success" class="line hide">
+        Signin succeded!
+      </div>
     </form>
   </div>
-    <script type="text/javascript" src="public/form.js"></script>
+    <script type="text/javascript" src="public/js/form.js"></script>
   </body>
 </html>

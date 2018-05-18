@@ -2327,3 +2327,105 @@
   margin: 0;
   overflow: visible;
   clip: auto; }
+
+/*Form bg gradient*/
+@keyframes bg {
+  0% {
+    background-position: 96% 0%; }
+  50% {
+    background-position: 5% 100%; }
+  100% {
+    background-position: 96% 0%; } }
+
+body {
+  background: #f4f6f6;
+  color: white; }
+
+button {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+  button:hover, button:active {
+    text-shadow: 0 -1px #1b83b5; }
+  button:active, button:focus {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+    transition: .3s all linear; }
+    button:active::after, button:focus::after {
+      content: ' ...'; }
+
+.form {
+  margin-top: 10%;
+  margin-top: 10vh;
+  max-width: 600px; }
+  .form .error {
+    color: white;
+    line-height: 16px;
+    font-size: 16px; }
+    .form .error div {
+      font-size: 12px;
+      line-height: 28px; }
+    .form .error i {
+      float: left;
+      padding: 0 4px;
+      line-height: 27px; }
+      .form .error i:nth-child(odd) {
+        float: right; }
+  .form form {
+    max-width: 300px;
+    padding: 40px 7%;
+    border-radius: 2px;
+    background: linear-gradient(226deg, #00d5e7, #42acb4, #00ffd0, #007aff) 0% 0%/800% 800%;
+    animation: bg 15s ease infinite; }
+    .form form img {
+      background: #f4f6f6;
+      padding: 15px;
+      margin: 50px;
+      border-radius: 0 0 50px 50px;
+      margin-top: -42px;
+      border-top: 80px solid #f4f6f6;
+      transition: .4s margin-top ease-in-out; }
+      .form form img.success {
+        margin-top: -150px; }
+    .form form span {
+      cursor: pointer;
+      color: white;
+      width: 70px;
+      padding: 4px 2px;
+      margin: 0;
+      border-radius: 2px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
+      .form form span:hover:not(.active) {
+        transition: .15s color linear;
+        color: rgba(255, 255, 255, 0.5); }
+      .form form span.active {
+        padding: 4.5px 2px;
+        background: rgba(0, 0, 0, 0.1);
+        color: white;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset; }
+        .form form span.active i {
+          color: white; }
+
+input {
+  text-indent: 10px;
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: none !important;
+  box-shadow: !important; }
+  input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.75); }
+  input::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.75); }
+  input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.75); }
+  input:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.75); }
+  input:focus {
+    background: rgba(0, 0, 0, 0.05);
+    color: white;
+    transition: .3s background-color linear; }
+  input.odd {
+    border-radius: 5px 5px 0 0; }
+  input.even {
+    border-radius: 0 0 5px 5px; }

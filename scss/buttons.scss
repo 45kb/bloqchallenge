@@ -1,18 +1,18 @@
 button {
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0, 0, 0, .1);
   color: $color-button-text;
   padding: 10px 0;
   border-radius: 20px;
-  box-shadow: 0 1px 1px rgba(0,0,0, .3);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
 
   &:hover, &:active {
-    transition: .09s all linear;
     text-shadow: 0 -1px $color-button-shadow;
   }
 
   &:active, &:focus {
-    box-shadow: 0 1px 1px rgba(0,0,0, .1) inset;
-    &:after {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1) inset;
+    transition: .3s all linear;
+    &::after {
       content: ' ...';
     }
   }

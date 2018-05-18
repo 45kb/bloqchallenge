@@ -2,15 +2,27 @@
     , openSignin = new Event('openSignin')
     , launchSignin = new Event('launchSignin')
     , launchLogin = new Event('launchLogin')
+    , loginSuccess = new Event('loginSuccess')
+    , signinSuccess = new Event('signinSuccess')
+    , authImg = document.getElementById('auth-img')
+    , formBody = document.getElementById('form-body')
+    , loginSuccessElement = document.getElementById('login-success')
+    , signinSuccessElement = document.getElementById('signin-success')
     , signinButton = document.getElementById('signin-button')
     , signinForm = document.getElementById('signin')
     , loginButton = document.getElementById('login-button')
     , loginOption = document.getElementById('login-option')
     , signinOption = document.getElementById('signin-option')
     , loginError = document.getElementById('login-error')
-    , loginErrorSpan = document.getElementById('login-error').getElementsByTagName('div')[0]
-    , signinErrorSpan = document.getElementById('signin-error').getElementsByTagName('div')[0]
+    , loginErrorElement = document.getElementById('login-error').getElementsByTagName('div')[0]
+    , signinErrorElement = document.getElementById('signin-error').getElementsByTagName('div')[0]
     , signinError = document.getElementById('signin-error')
+    , launchLoginSuccess = function () {
+        window.dispatchEvent(loginSuccess)
+    }
+    , launchSigninSuccess = function () {
+        window.dispatchEvent(signinSuccess)
+    }
     , launchTheLogin = function () {
       window.dispatchEvent(launchLogin)
     }
@@ -43,6 +55,17 @@
     loginButton.classList.add('show')
   }, false)
 
+  //listen for login success
+  window.addEventListener('loginSuccess', function (e) {
+    authImg.classList.add('success')
+    formBody.innerText = "Login succeded!"
+  })
+
+  window.addEventListener('signinSuccess', function (e) {
+    authImg.classList.add('success')
+    formBody.innerText = "Sign in succeded!"
+  })
+
   window.addEventListener('openSignin', function (e) {
     signinError.classList.add('hide')
     loginError.classList.add('hide')
@@ -59,9 +82,16 @@
 
   window.addEventListener('launchSignin', function (e) {
     signinError.classList.remove('hide')
-    signinErrorSpan.innerText = "Error in a field!"
+    signinErrorElement.innerText = "Error in a field!"
+    window.setTimeout(function () {
+      launchSigninSuccess()
+    }, 2500)
   }, false)
+
   window.addEventListener('launchLogin', function (e) {
     loginError.classList.remove('hide')
-    loginErrorSpan.innerText = "Error in a field!"
+    loginErrorElement.innerText = "Error in a field!"
+    window.setTimeout(function () {
+      launchLoginSuccess()
+    }, 2500)
   }, false)
