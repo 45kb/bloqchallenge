@@ -1,12 +1,30 @@
 input {
-  padding: 0 3%;
+  text-indent: 10px;
+  color: white;
+  background: rgba(0,0,0, .1);
+  -webkit-box-shadow: none !important;
+  box-shadow:  !important;
 
+  &::-webkit-input-placeholder {
+    color: rgba(255,255,255, .75);
+  }
+  &::-moz-placeholder {
+    color: rgba(255,255,255, .75);
+  }
+  &:-ms-input-placeholder {
+    color: rgba(255,255,255, .75);
+  }
+  &:-moz-placeholder {
+    color: rgba(255,255,255, .75);
+  }
   &:focus {
-    background: rgba(255,255,255, .95);
-    transition: .3s background linear;
+    background: rgba(0,0,0, .05);
+    color: white;
+    transition: .3s background-color linear;
   }
   &.odd {
     border-radius: 5px 5px 0 0;
+    border-bottom: 1px solid rgba(0,0,0, .1);
   }
 
   &.even {

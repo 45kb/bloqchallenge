@@ -1,10 +1,10 @@
 .form {
-  margin-top: 15%;
+  margin-top: 10%;
   margin-top: 20vh;
   max-width: 600px;
 
   .error {
-    color: rgba(0,0,0, .6);
+    color: white;
     line-height: 16px;
     font-size: 16px;
 
@@ -15,7 +15,6 @@
 
     i {
       float:left;
-      color: red;
       padding: 0 4px;
       line-height: 27px;
 
@@ -27,44 +26,45 @@
   form {
     max-width: 300px;
     padding: 40px 7%;
-    border-radius: 10px;
-    background: linear-gradient(226deg, #00d5e7, #42acb4, #00ffd0, #007aff);
-    background-size: 800% 800%;
-    -webkit-animation: bg 37s ease infinite;
-    -moz-animation: bg 37s ease infinite;
-    animation: bg 37s ease infinite;
+    border-radius: 2px;
+    background: $color-form;
+    img {
+      background: $color-body;
+      padding: 20px;
+      margin: 50px;
+      border-radius: 0 0 50px 50px;
+      margin-top: -42px;
+      border-top: 80px solid $color-body;
+    }
 
-    span {
-      cursor: pointer;
-      background: white;
-      color: black;
-      padding: 5px 10px;
+  span {
+    cursor: pointer;
+    background: $color-body;
+    color: black;
+    width: 70px;
+    padding: 3px 0;
+    margin: 0 20px;
+    border-radius: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0, .15);
+
+    i {
+      color: rgba(0,0,0, .25);
+    }
+
+    &:hover:not(.active) {
+      transition: .15s color linear;
+      color: rgba(0,0,0, .6);
+    }
+
+    &.active {
+      background: rgba(0,0,0,.1);
+      color: white;
+      box-shadow: 0 1px 1px rgba(0,0,0, .1) inset;
 
       i {
-        color: rgba(0,0,0, .25);
-      }
-
-      &:hover:not(.active) {
-        transition: .15s color linear;
-        color: rgba(0,0,0, .6);
-      }
-
-      &.active {
-        background: rgba(0,0,0,.22);
         color: white;
-
-        i {
-          color: white;
-        }
-      }
-
-      &:nth-child(odd) {
-        border-radius: 5px  0 0 5px;
-      }
-
-      &:nth-child(even) {
-        border-radius: 0 5px 5px 0;
       }
     }
   }
+}
 }
