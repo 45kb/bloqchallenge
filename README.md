@@ -1,13 +1,13 @@
 
-## Simple Auth UI Component
+## Simple Auth Component
 
-A Simple UX/UI Auth Component
+A Simple Auth Component in vanilla Javascript and Sass
 
-### Installation
+### Install
 
  > npm i & npm start
 
-### Visualisation
+### Open in browser
 
 <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
