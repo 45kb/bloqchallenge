@@ -7,7 +7,7 @@ A Simple Auth Component in vanilla Javascript and Sass
 
  > npm i & npm start
 
-### Open in browser
+### Open
 
 <a href="http://localhost:3000" target="_blank">http://localhost:3000</a>
 
