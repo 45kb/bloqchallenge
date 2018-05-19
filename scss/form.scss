@@ -5,7 +5,7 @@
   max-width: 600px;
 
   .error {
-    color: white;
+    color: $color-form-error-text;
     line-height: 16px;
     font-size: 16px;
 
@@ -28,7 +28,7 @@
     max-width: 300px;
     padding: 40px 7%;
     border-radius: 2px;
-    background: linear-gradient(226deg, rgb(0, 213, 231), rgb(66, 172, 180), rgb(0, 255, 208), rgb(0, 122, 255)) 0% 0% / 800% 800%;
+    background: $color-form;
     animation: bg 15s ease infinite;
 
     img {
@@ -46,27 +46,27 @@
 
   span {
     cursor: pointer;
-    color: white;
+    color: $color-form-opt-button-text;
     width: 70px;
     padding: 4px 2px;
     margin: 0;
     border-radius: 2px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    box-shadow: 0 1px 1px $color-form-opt-button-box-shadow;
 
     &:hover:not(.active) {
       transition: .15s color linear;
-      color: rgba(255,255,255, .5);
+      color: $color-form-opt-button-hover;
     }
 
     &.active {
 
       padding: 4.5px 2px;
-      background: rgba(0, 0, 0, .1);
-      color: white;
-      box-shadow: 0 1px 1px rgba(0, 0, 0, .1) inset;
+      background: $color-form-opt-button-active;
+      color: $color-form-opt-button-text-active;
+      box-shadow: 0 1px 1px $color-form-opt-button-active inset;
 
       i {
-        color: white;
+        color: $color-form-opt-button-text;
       }
     }
   }

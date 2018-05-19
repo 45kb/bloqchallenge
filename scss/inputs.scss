@@ -1,27 +1,41 @@
 input {
   text-indent: 10px;
-  color: white;
-  background: rgba(0,0,0, .1);
+  color: $color-input-text;
+  background: $color-input-background;
   -webkit-box-shadow: none !important;
   box-shadow:  !important;
 
   &::-webkit-input-placeholder {
-    color: rgba(255,255,255, .75);
+    color: $color-input-placeholder;
   }
   &::-moz-placeholder {
-    color: rgba(255,255,255, .75);
+    color: $color-input-placeholder;
   }
   &:-ms-input-placeholder {
-    color: rgba(255,255,255, .75);
+    color: $color-input-placeholder;
   }
   &:-moz-placeholder {
-    color: rgba(255,255,255, .75);
+    color: $color-input-placeholder;
   }
   &:focus {
-    background: rgba(0,0,0, .05);
-    color: white;
+    background: $color-input-background-focus;
+    color: $color-input-focus;
     transition: .3s background-color linear;
+
+    &::-webkit-input-placeholder {
+      color: $color-input-placeholder-focus;
+    }
+    &::-moz-placeholder {
+      color: $color-input-placeholder-focus;
+    }
+    &:-ms-input-placeholder {
+      color: $color-input-placeholder-focus;
+    }
+    &:-moz-placeholder {
+      color: $color-input-placeholder-focus;
+    }
   }
+
   &.odd {
     border-radius: 5px 5px 0 0;
   }

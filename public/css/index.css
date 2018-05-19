@@ -2348,7 +2348,7 @@ button {
   border-radius: 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
   button:hover, button:active {
-    text-shadow: 0 -1px #1b83b5; }
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.1); }
   button:active, button:focus {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
     transition: .3s all linear; }
@@ -2415,17 +2415,25 @@ input {
   -webkit-box-shadow: none !important;
   box-shadow: !important; }
   input::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.75); }
+    color: rgba(255, 255, 255, 0.85); }
   input::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.75); }
+    color: rgba(255, 255, 255, 0.85); }
   input:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.75); }
+    color: rgba(255, 255, 255, 0.85); }
   input:-moz-placeholder {
-    color: rgba(255, 255, 255, 0.75); }
+    color: rgba(255, 255, 255, 0.85); }
   input:focus {
     background: rgba(0, 0, 0, 0.05);
     color: white;
     transition: .3s background-color linear; }
+    input:focus::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.45); }
+    input:focus::-moz-placeholder {
+      color: rgba(255, 255, 255, 0.45); }
+    input:focus:-ms-input-placeholder {
+      color: rgba(255, 255, 255, 0.45); }
+    input:focus:-moz-placeholder {
+      color: rgba(255, 255, 255, 0.45); }
   input.odd {
     border-radius: 5px 5px 0 0; }
   input.even {
