@@ -2359,7 +2359,8 @@ button {
   margin-top: 10%;
   margin-top: 10vh;
   width: 90%;
-  max-width: 600px; }
+  max-width: 600px;
+  word-wrap: break-word; }
   .form .error {
     color: white;
     line-height: 16px;

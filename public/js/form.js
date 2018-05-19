@@ -18,6 +18,19 @@
     , loginErrorElement = document.getElementById('login-error').getElementsByTagName('div')[0]
     , signinErrorElement = document.getElementById('signin-error').getElementsByTagName('div')[0]
     , signinError = document.getElementById('signin-error')
+    , getFormData = function () {
+      var email = document.getElementById('email').value
+        , password = document.getElementById('password').value
+        , firstname = document.getElementById('firstname').value
+        , lastname = document.getElementById('lastname').value
+
+      return JSON.stringify({
+        email: email,
+        password: password,
+        firstname: firstname,
+        lastname: lastname
+      })
+    }
     , launchLoginSuccess = function () {
         window.dispatchEvent(loginSuccess)
     }
@@ -49,34 +62,34 @@
       body.style = 'pointer-events:all'
     }
 
-  window.addEventListener('openLogin', function (e) {
-    signinError.classList.add('hide')
-    loginError.classList.add('hide')
-
-    signinForm.classList.remove('show')
-    signinButton.classList.remove('show')
-
-    signinOption.classList.remove('active')
-    loginOption.classList.add('active')
-
-    loginButton.classList.add('show')
-  }, false)
-
   //listen for login success
   window.addEventListener('loginSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form error will stop the user, now we continue to the success event. Ok?")
+    window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
     authImg.classList.add('success')
-    formBody.innerText = "Login succeded!"
+    formBody.innerHTML = getFormData() + "<div><br/><br/>Login end!</div>"
   })
-
+  //listen for signin success
   window.addEventListener('signinSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form error will stop the user, now we continue to the success event. Ok?")
+    window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
     authImg.classList.add('success')
-    formBody.innerText = "Sign in succeded!"
+    formBody.innerText = getFormData() + "<div><br/><br/>Signin end!</div>"
   })
+  //listen for form toggle to login mode
+    window.addEventListener('openLogin', function (e) {
+      signinError.classList.add('hide')
+      loginError.classList.add('hide')
 
+      signinForm.classList.remove('show')
+      signinButton.classList.remove('show')
+
+      signinOption.classList.remove('active')
+      loginOption.classList.add('active')
+
+      loginButton.classList.add('show')
+    }, false)
+  //listen for form toggle to signin mode
   window.addEventListener('openSignin', function (e) {
     signinError.classList.add('hide')
     loginError.classList.add('hide')
@@ -90,7 +103,7 @@
     loginButton.classList.add('hide')
     loginButton.classList.remove('show')
   }, false)
-
+  //listen for signin start (click on signin button)
   window.addEventListener('launchSignin', function (e) {
     disableCursor()
     signinError.classList.remove('hide')
@@ -99,7 +112,7 @@
       launchSigninSuccess()
     }, 1000)
   }, false)
-
+  //listen for login start (click on login button)
   window.addEventListener('launchLogin', function (e) {
     disableCursor()
     loginError.classList.remove('hide')
