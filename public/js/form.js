@@ -67,14 +67,14 @@
     enableCursor()
     window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
     authImg.classList.add('success')
-    formBody.innerHTML = getFormData() + "<div><br/><br/>Login end!</div>"
+    formBody.innerHTML = getFormData() + "<div><br/><br/>Log in end!</div>"
   })
   //listen for signin success
   window.addEventListener('signinSuccess', function (e) {
     enableCursor()
     window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
     authImg.classList.add('success')
-    formBody.innerText = getFormData() + "<div><br/><br/>Signin end!</div>"
+    formBody.innerText = getFormData() + "<div><br/><br/>Sign in end!</div>"
   })
   //listen for form toggle to login mode
     window.addEventListener('openLogin', function (e) {
