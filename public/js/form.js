@@ -72,10 +72,11 @@
       xhr.addEventListener('load', function() {
         var responseObject = this.response
         if (this.responseText === 'congratz!') {
-          alert("LOGGED IN!");
-          launchLoginSuccess();
+          window.alert("LOGGED IN!")
+          launchLoginSuccess()
         } else {
-          alert("NOPE!!!! must be ----> email:pippo, password:user");
+          window.alert("NOPE!!!! must be ----> email:pippo, password:user")
+          enableCursor()
         }
       })
 
@@ -102,7 +103,7 @@
         } else {
           window.localStorage.jwt = "none"
         }
-        getSecret();
+        getSecret()
       })
 
       console.log('going to send', sendObject)
@@ -164,5 +165,5 @@
     disableCursor()
     loginError.classList.remove('hide')
     loginErrorElement.innerText = "Error in a field!"
-    login();
+    login()
   }, false)
