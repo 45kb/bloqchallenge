@@ -71,10 +71,11 @@
       xhr.setRequestHeader("Authorization", "Bearer: " + window.localStorage.jwt)
       xhr.addEventListener('load', function() {
         var responseObject = this.response
-        alert(this.responseText);
-
         if (this.responseText === 'congratz!') {
+          alert("LOGGED IN!");
           launchLoginSuccess();
+        } else {
+          alert("NOPE!!!! must be ----> email:pippo, password:user");
         }
       })
 
