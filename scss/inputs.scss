@@ -4,19 +4,22 @@ input {
   background: $color-input-background;
   -webkit-box-shadow: none !important;
   box-shadow:  !important;
-
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s;
+  }
   &::-webkit-input-placeholder {
-    color: $color-input-placeholder;
-  }
-  &::-moz-placeholder {
-    color: $color-input-placeholder;
-  }
-  &:-ms-input-placeholder {
     color: $color-input-placeholder;
   }
   &:-moz-placeholder {
     color: $color-input-placeholder;
   }
+  &:-ms-input-placeholder {
+    color: $color-input-placeholder;
+  }
+
   &:focus {
     background: $color-input-background-focus;
     color: $color-input-focus;
@@ -25,13 +28,10 @@ input {
     &::-webkit-input-placeholder {
       color: $color-input-placeholder-focus;
     }
-    &::-moz-placeholder {
+    &:-moz-placeholder {
       color: $color-input-placeholder-focus;
     }
     &:-ms-input-placeholder {
-      color: $color-input-placeholder-focus;
-    }
-    &:-moz-placeholder {
       color: $color-input-placeholder-focus;
     }
   }

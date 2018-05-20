@@ -85,13 +85,11 @@ input {
   background: rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: none !important;
   box-shadow: !important; }
+  input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
+    transition: all 5000s ease-in-out 0s; }
   input::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.85); }
-  input::-moz-placeholder {
-    color: rgba(255, 255, 255, 0.85); }
   input:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.85); }
-  input:-moz-placeholder {
     color: rgba(255, 255, 255, 0.85); }
   input:focus {
     background: rgba(0, 0, 0, 0.05);
@@ -99,11 +97,7 @@ input {
     transition: .3s background-color linear; }
     input:focus::-webkit-input-placeholder {
       color: rgba(255, 255, 255, 0.45); }
-    input:focus::-moz-placeholder {
-      color: rgba(255, 255, 255, 0.45); }
     input:focus:-ms-input-placeholder {
-      color: rgba(255, 255, 255, 0.45); }
-    input:focus:-moz-placeholder {
       color: rgba(255, 255, 255, 0.45); }
   input.odd {
     border-radius: 5px 5px 0 0; }
