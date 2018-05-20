@@ -89,6 +89,8 @@ input {
     transition: all 5000s ease-in-out 0s; }
   input::-webkit-input-placeholder {
     color: rgba(255, 255, 255, 0.85); }
+  input:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.85); }
   input:-ms-input-placeholder {
     color: rgba(255, 255, 255, 0.85); }
   input:focus {
@@ -96,6 +98,8 @@ input {
     color: white;
     transition: .3s background-color linear; }
     input:focus::-webkit-input-placeholder {
+      color: rgba(255, 255, 255, 0.45); }
+    input:focus:-moz-placeholder {
       color: rgba(255, 255, 255, 0.45); }
     input:focus:-ms-input-placeholder {
       color: rgba(255, 255, 255, 0.45); }
