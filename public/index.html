@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="form center-content">
-    <form>
+    <form onSubmit="submitForm(this)">
       <img id="auth-img" src="/public/img/anonym.png" width="50" alt="">
       <div id="form-body">
       <!-- toggle form-->
@@ -56,9 +56,9 @@
       <!--button toggle-->
       <div class="separator15"></div>
       <div class="center-content">
-        <button id="login-button" class="line" type="button" onClick="launchTheLogin()" name="button">Log in</button>
+        <button id="login-button" class="line" type="button" onClick="launchTheLogin()" onFocus="launchTheLogin()" name="button">Log in</button>
         <div class="separator15"></div>
-        <button id="signin-button" class="line hide" type="button" onClick="launchTheSignin()" name="button">Sign in</button>
+        <button id="signin-button" class="line hide" type="button" onClick="launchTheSignin()" onFocus="launchTheSignin()" name="button">Sign in</button>
         <div class="separator15"></div>
       </div>
       </div>
