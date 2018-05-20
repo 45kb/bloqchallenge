@@ -158,7 +158,7 @@
     signinErrorElement.innerText = "Error in a field!"
     window.setTimeout(function () {
       launchSigninSuccess()
-    }, 1000)
+    }, 500)
   }, false)
   //listen for login start (click on login button)
   window.addEventListener('launchLogin', function (e) {
