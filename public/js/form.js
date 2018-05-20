@@ -62,45 +62,51 @@
     , enableCursor = function () {
       body.style = 'pointer-events:all'
     }
-    , getToken = function () {
+    , getSecret = function () {
+
+      var url = WS_URL + "/challenge"
+        , xhr = new XMLHttpRequest()
+
+      xhr.open('GET', url, true)
+      xhr.setRequestHeader("Authorization", "Bearer: " + window.localStorage.jwt)
+      xhr.addEventListener('load', function() {
+        var responseObject = this.response
+        alert(this.responseText);
+
+        if (this.responseText === 'congratz!') {
+          launchLoginSuccess();
+        }
+      })
+
+      xhr.send(null)
+    }
+    , login = function () {
       var loginUrl = WS_URL + "/login"
-      var xhr = new XMLHttpRequest()
-      var user = JSON.parse(getFormData()).email
-      var password = JSON.parse(getFormData()).password
+        , xhr = new XMLHttpRequest()
+        , formData = JSON.parse(getFormData())
+        , sendObject = JSON.stringify({
+          user: formData.email,
+          password: formData.password
+        })
 
       xhr.open('POST', loginUrl, true)
       xhr.setRequestHeader('Content-Type', 'application/json charset=UTF-8')
       xhr.addEventListener('load', function() {
         var responseObject = JSON.parse(this.response)
         console.log(responseObject)
-        if (responseObject.token) {
+        if (responseObject.token &&
+          formData.email === responseObject.user &&
+          formData.password === responseObject.role) {
           window.localStorage.jwt = responseObject.token
         } else {
-          window.localStorage.jwt = null
+          window.localStorage.jwt = "none"
         }
+        getSecret();
       })
-
-      var sendObject = JSON.stringify({user: user, password: password})
 
       console.log('going to send', sendObject)
 
       xhr.send(sendObject)
-    }
-    , getSecret = function () {
-
-      var url = WS_URL + "/challenge"
-      var xhr = new XMLHttpRequest()
-      var tokenElement = document.getElementById('token')
-      var resultElement = document.getElementById('result')
-      xhr.open('GET', url, true)
-      xhr.setRequestHeader("Authorization", "Bearer: " + window.localStorage.jwt)
-      xhr.addEventListener('load', function() {
-        var responseObject = JSON.parse(this.response)
-        console.log(responseObject)
-        resultElement.innerHTML = this.responseText
-      })
-
-      xhr.send(null)
     }
   //listen for login success
   window.addEventListener('loginSuccess', function (e) {
@@ -157,9 +163,5 @@
     disableCursor()
     loginError.classList.remove('hide')
     loginErrorElement.innerText = "Error in a field!"
-    getToken();
-    getSecret();
-    window.setTimeout(function () {
-      launchLoginSuccess()
-    }, 1000)
+    login();
   }, false)
