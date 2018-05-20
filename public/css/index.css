@@ -19,10 +19,10 @@ button {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
   button:hover, button:active {
     text-shadow: 0 -1px rgba(0, 0, 0, 0.1); }
-  button:active, button:focus {
+  button:active {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
     transition: .3s all linear; }
-    button:active::after, button:focus::after {
+    button:active::after {
       content: ' ...'; }
 
 .form {

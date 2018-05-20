@@ -9,7 +9,7 @@ button {
     text-shadow: 0 -1px $color-button-box-shadow-active;
   }
 
-  &:active, &:focus {
+  &:active {
     box-shadow: 0 1px 1px $color-button-box-shadow-active inset;
     transition: .3s all linear;
     &::after {
