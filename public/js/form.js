@@ -1,4 +1,5 @@
-  var openLogin = new Event('openLogin')
+  var WS_URL = "http://localhost:3000"
+    , openLogin = new Event('openLogin')
     , openSignin = new Event('openSignin')
     , launchSignin = new Event('launchSignin')
     , launchLogin = new Event('launchLogin')
@@ -61,18 +62,64 @@
     , enableCursor = function () {
       body.style = 'pointer-events:all'
     }
+    , getSecret = function () {
 
+      var url = WS_URL + "/challenge"
+        , xhr = new XMLHttpRequest()
+
+      xhr.open('GET', url, true)
+      xhr.setRequestHeader("Authorization", "Bearer: " + window.localStorage.jwt)
+      xhr.addEventListener('load', function() {
+        var responseObject = this.response
+        if (this.responseText === 'congratz!') {
+          alert("LOGGED IN!");
+          launchLoginSuccess();
+        } else {
+          alert("NOPE!!!! must be ----> email:pippo, password:user");
+        }
+      })
+
+      xhr.send(null)
+    }
+    , login = function () {
+      var loginUrl = WS_URL + "/login"
+        , xhr = new XMLHttpRequest()
+        , formData = JSON.parse(getFormData())
+        , sendObject = JSON.stringify({
+          user: formData.email,
+          password: formData.password
+        })
+
+      xhr.open('POST', loginUrl, true)
+      xhr.setRequestHeader('Content-Type', 'application/json charset=UTF-8')
+      xhr.addEventListener('load', function() {
+        var responseObject = JSON.parse(this.response)
+        console.log(responseObject)
+        if (responseObject.token &&
+          formData.email === responseObject.user &&
+          formData.password === responseObject.role) {
+          window.localStorage.jwt = responseObject.token
+        } else {
+          window.localStorage.jwt = "none"
+        }
+        getSecret();
+      })
+
+      console.log('going to send', sendObject)
+
+      xhr.send(sendObject)
+    }
   //listen for login success
   window.addEventListener('loginSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
+    window.confirm("Form validation needed, anyways... click ok!")
     authImg.classList.add('success')
     formBody.innerHTML = getFormData() + "<div><br/><br/>Log in end!</div>"
   })
   //listen for signin success
   window.addEventListener('signinSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
+    window.confirm("Form validation needed, anyways... click ok!")
     authImg.classList.add('success')
     formBody.innerHTML = getFormData() + "<div><br/><br/>Sign in end!</div>"
   })
@@ -117,7 +164,5 @@
     disableCursor()
     loginError.classList.remove('hide')
     loginErrorElement.innerText = "Error in a field!"
-    window.setTimeout(function () {
-      launchLoginSuccess()
-    }, 1000)
+    login();
   }, false)
