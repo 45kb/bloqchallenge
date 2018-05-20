@@ -70,7 +70,7 @@ button {
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15); }
       .form form span:hover:not(.active) {
         transition: .15s color linear;
-        color: rgba(255, 255, 255, 0.5); }
+        color: rgba(255, 255, 255, 0.8); }
       .form form span.active {
         padding: 4.5px 2px;
         background: rgba(0, 0, 0, 0.1);
