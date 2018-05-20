@@ -112,14 +112,14 @@
   //listen for login success
   window.addEventListener('loginSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
+    window.confirm("Form validation needed, anyways... click ok!")
     authImg.classList.add('success')
     formBody.innerHTML = getFormData() + "<div><br/><br/>Log in end!</div>"
   })
   //listen for signin success
   window.addEventListener('signinSuccess', function (e) {
     enableCursor()
-    window.confirm("At this point the form errors will stop the user, now we continue to the success event. click ok.")
+    window.confirm("Form validation needed, anyways... click ok!")
     authImg.classList.add('success')
     formBody.innerHTML = getFormData() + "<div><br/><br/>Sign in end!</div>"
   })
