@@ -3,7 +3,7 @@
 
 A Simple Auth Component in vanilla Javascript and Sass
 
-### Install and launch
+### Install and :rocket:
 
  > npm i && npm start
 
