@@ -5,7 +5,7 @@ A Simple Auth Component in vanilla Javascript and Sass
 
 ### Install
 
- > npm i & npm start
+ > npm i && npm start
 
 ### Open
 
